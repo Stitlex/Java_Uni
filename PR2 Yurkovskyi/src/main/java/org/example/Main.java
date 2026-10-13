@@ -33,11 +33,11 @@ public class Main {
 
         // Візуальні звіти із зірочками (*)
         // Звіт по категоріях
-        Map<String, Double> expensesByCategory = getTotalExpensesMonth(transactions);
+        Map<String, Double> expensesByCategory = getTotalExpensesCategory(transactions);
         printVisualReport("Витрати по категоріях", expensesByCategory);
 
         // Звіт по місяцях
-        Map<String, Double> expensesByMonth = getTotalExpensesCategory(transactions);
+        Map<String, Double> expensesByMonth = getTotalExpensesMonth(transactions);
         printVisualReport("Витрати по місяцях", expensesByMonth);
     }
 }
