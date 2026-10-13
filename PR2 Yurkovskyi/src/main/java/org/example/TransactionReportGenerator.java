@@ -44,10 +44,11 @@ public abstract class TransactionReportGenerator {
     // Виведення звіту
     public static void printVisualReport(String title, Map<String, Double> data) {
         System.out.println("\n=== " + title + "(1 символ (*) = 1000 грн) ===");
-        for (Map.Entry<String, Double> entry : data.entrySet()) {
-            int starsCount = (int) (entry.getValue() / 1000);
+        for (String key : data.keySet()) {
+            Double value = data.get(key); // дістаємо значення за ключем
+            int starsCount = (int) (value / 1000);
             String stars = "*".repeat(Math.max(0, starsCount));
-            System.out.printf("%-20s : %.2f [%s]\n", entry.getKey(), entry.getValue(), stars);
+            System.out.printf("%-20s : %.2f [%s]\n", key, value, stars);
         }
     }
 }
